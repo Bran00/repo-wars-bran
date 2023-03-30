@@ -5,7 +5,7 @@ import './app.css'
 
 const App = () => {
   const [showGame, setShowGame] = useState(false)
-  const[repos, setRepos, allRepos] = useRepos(100)
+  const[ repos, setRepos, allRepos ] = useRepos(100)
 
   const handleStartClick = () => {
     setShowGame(true)
@@ -17,6 +17,9 @@ const App = () => {
       <>
        <h1 className='title'>Welcome to RepoWars</h1>
        <h2 className='headline gradient text'>A developer-driven guessing game</h2>
+       {repos.map((repo) => (
+        <h1>{repo.name}</h1>
+       ))}
        { repos.length === 0 ? (
         <p className='loading'>Loading game...</p>
        ): (
