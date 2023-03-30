@@ -1,0 +1,107 @@
+.repo {
+  background-color: var(--color-darkest);
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.repo:hover { 
+  background-color: var(--color-darkish);
+  cursor: pointer;
+}
+
+.repo .header {
+  display: flex;
+  flex-direction: column;
+  height: 2rem;
+  gap: .5rem;
+}
+
+.header .name {
+  font-weight: 700;
+  color: var(--color-highlight);
+}
+
+.header .fullname {
+  font-size: 0.8rem;
+  margin-left: auto;
+  color: var(--color-secondary)
+}
+
+.repo .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.content .description {
+  height: 2rem;
+
+}
+
+.content .data {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.data .avatar {
+  width: 4rem;
+  height: 4rem;
+  margin-top: .5rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  background-color: var(--color-darkest);
+  border: .1rem solid var(--color-primary);
+}
+
+.data .stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .7rem;
+}
+
+.stats .item {
+  display: flex;
+  gap: .5rem;
+  color: var(--color-primary);
+}
+
+.stats .booleans {
+  display: flex;
+  gap: .4rem;
+}
+
+.stats .item p {
+  color: var(--color-light);
+}
+
+.stats .item-false {
+  color: var(--color-dark)
+}
+
+.stats .topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  max-height: 3rem;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.stats .topic {
+  background-color: var(--color-primary);
+  height: 1.25rem;
+  padding: .3rem .4rem;
+  border-radius: .5rem;
+  font-size: .6rem;
+  color: var(--color-light);
+}

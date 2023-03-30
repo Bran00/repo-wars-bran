@@ -44,7 +44,7 @@
 body {
   font-size: 6rem;
   background-color: var(--color-dark);
-  color: var(--color-light)
+  color: var(--color-light);
 }
 
 main {
@@ -69,6 +69,7 @@ main {
   line-height: 4rem;
   text-align: center;
   margin-top: 2rem;
+  border-radius: 0.5rem;
   padding: .4rem .8rem;
 }
 
@@ -99,6 +100,7 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   padding: 1rem 2rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }

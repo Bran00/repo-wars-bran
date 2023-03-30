@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
+import { FaCheckCircle, FaExchangeAlt, FaTimesCircle } from "react-icons/fa"
+
+import RepoCard from "./RepoCard"
+
+import './game.css'
+
 interface GameProps {
   repoState: [Repo[], React.Dispatch<React.SetStateAction<Repo[]>>]
   originalList: Repo[]
@@ -21,38 +27,51 @@ const Game: React.FC<GameProps> = ({
     setRepo2(originalList[1])
   }, [])
 
+  
+  const handleChoice = () => {}
+
+
+
   return (
-   <div className="game">
-       { over?(
-        <div className="score">
-        </div>
-       ):(
-        repo1 && repo2 && (
-          <div className='repos'>
-             <h1 className='Lilte'>Choose the repo with most Stars</h1>
-             <div className='Container'>
-               <div>
-                  <h1>{repo1.name} = {repo1.full_name} </h1>
-               </div>
+    <div className="game">
+      {over ? (
+        <div className="score"></div>
+      ) : (
+        repo1 &&
+        repo2 && (
+          <div className="repos">
+            <h1 className="title">Choose the repo with most Stars</h1>
+            <div className="container">
+              <RepoCard content={repo1} handler={handleChoice} />
 
-               <div className='dashboard'>
-              
-               </div>
-
-               <div>
-                  <h1>{repo2.name} = {repo2.full_name} </h1>
-               </div>
-             </div>
+              <div className="dashboard">
+                <FaExchangeAlt className='icon-versus'/>
+              </div>
+              <RepoCard content={repo2} handler={handleChoice} />
+            </div>
           </div>
         )
-       )}
+      )}
 
-    <div className='button'>
-      <button type="submit" className="button gradient "  onClick={()=> setShowGame(false)}>Back</button>
-      <button type="submit" className="button gradient " onClick={()=> setShowGame(false)}>Skip</button>
+      <div className="buttons">
+        <button
+          type="submit"
+          className="button gradient alternate"
+          onClick={() => setShowGame(false)}
+        >
+          {over ? "Play Again" : "Again"}
+        </button>
+        {!over && (
+          <button
+            type="submit"
+            className="button gradient "
+            onClick={() => setShowGame(false)}
+          >
+            Skip
+          </button>
+        )}
+      </div>
     </div>
-
-   </div>
   )
 }
 
