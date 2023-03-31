@@ -31,8 +31,8 @@ const RepoCard: React.FC<RepoCardProps> = ({ content, handler }) => {
           <ul className="stats">
             <li className="item">
               {import.meta.env.VITE_GOD_MODE === true
-              ? content.full_name.stargazers_count
-              : "???..."}
+                ? content.stargazers_count
+                : "???..."}
               <FaStar />
             </li>
             <li className="item">
