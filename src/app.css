@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+
 
 :root {
   font-size: 62.5%;
@@ -37,14 +38,14 @@
 }
 
 * {
-  font-family: 'Raleway',
-      sans-serif;
+  font-family: 'Quantico', sans-serif;
 }
 
 body {
   font-size: 2rem;
   background-color: var(--color-dark);
   color: var(--color-light);
+  animation: body 3s linear ;
 }
 
 main {
@@ -62,7 +63,9 @@ main {
   text-align: center;
   color: var(--color-light);
   text-shadow: .3rem .3rem var(--color-primary);
+  
 }
+
 
 .headline {
   font-size: 1.5rem;
@@ -81,6 +84,32 @@ main {
   animation: bouncy 1s infinite;
 }
 
+.button {
+  color: var(--color-dark);
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  animation: button 1s linear;
+}
+
+@keyframes button {
+  0% {
+      transition-timing-function: linear;
+      transition-duration: 0.5s;
+      transform: translate(-0.5);
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
 @keyframes bouncy {
   0% {
     transform: translateX(0)
@@ -93,17 +122,21 @@ main {
   }
 }
 
-.button {
-  color: var(--color-dark);
-  border: none;
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+@keyframes body {
+
+  0% {
+    transition-timing-function: linear;
+      transition-duration: 0.5s;
+      transform: translate(0, -1rem);
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
 }
+
+
 
 .button.gradient:hover {
   background: -webkit-linear-gradient(right,

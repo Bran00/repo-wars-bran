@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRepos } from "./hooks"
 
 import './app.css'
@@ -7,38 +7,56 @@ import { Game } from "./components";
 const App = () => {
   const [showGame, setShowGame] = useState(false)
   const[ repos, setRepos, allRepos ] = useRepos(100)
+  const [sound, setSound] = useState(false)
 
   const handleStartClick = () => {
     setShowGame(true)
   }
 
-  return <main>
+   
+  useEffect(() => {
+   
+    const bgAudio = new Audio(
+      "https://github.com/Bran00/sounds/blob/main/past/dubstep.mp3?raw=true"
+    )
+    
+    setTimeout(() => {
+      bgAudio.play();
+    }, 4000)
+  }, [])
+  
+  return (
+    <main >
+      {
+      !showGame && (
+        <>
+          <h1 className="title">Welcome to RepoWars</h1>
+          <h2 className="headline gradient text">
+            A developer-driven guessing game
+          </h2>
 
-    {!showGame &&(
-      <>
-       <h1 className='title'>Welcome to RepoWars</h1>
-       <h2 className='headline gradient text'>A developer-driven guessing game</h2>
-
-       { repos.length === 0 ? (
-        <p className='loading'>Loading game...</p>
-       ): 
-       (
-        <button
-        type="submit"
-        className='button gradient'
-        onClick={handleStartClick}
-        >Start</button>
-       )}
-      </>
-    )}
-    {showGame &&(
-     <Game 
-     repoState={[repos, setRepos]}
-     originalList={allRepos}
-     setShowGame={setShowGame}
-     />
-    )}
-  </main>
+          {repos.length === 0 ? (
+            <p className="loading">Loading game...</p>
+          ) : (
+            <button
+              type="submit"
+              className="button gradient"
+              onClick={handleStartClick}
+            >
+              Start
+            </button>
+          )}
+        </>
+      )}
+      {showGame && (
+        <Game
+          repoState={[repos, setRepos]}
+          originalList={allRepos}
+          setShowGame={setShowGame}
+        />
+      )}
+    </main>
+    )
 }
 
 export default App;
