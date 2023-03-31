@@ -21,7 +21,7 @@ const App = () => {
     setTimeout(() => {
       console.log(bgAudio)
       bgAudio.play();
-    }, 10000)
+    }, 6000)
   }, [])
   
   return (
