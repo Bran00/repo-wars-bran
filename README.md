@@ -1,5 +1,8 @@
 ## Repo Wars
 
+![repowars!](src/assets/videogif.gif)
+
+
 ### This project
 
 Build to taste our habilities in React aiming responsiveness with consumption GitHub API. Also used in this project CSS for style in the game.
