@@ -7,7 +7,6 @@ import { Game } from "./components";
 const App = () => {
   const [showGame, setShowGame] = useState(false)
   const[ repos, setRepos, allRepos ] = useRepos(100)
-  const [sound, setSound] = useState(false)
 
   const handleStartClick = () => {
     setShowGame(true)
@@ -19,10 +18,10 @@ const App = () => {
     const bgAudio = new Audio(
       "https://github.com/Bran00/sounds/blob/main/past/dubstep.mp3?raw=true"
     )
-    
     setTimeout(() => {
+      console.log(bgAudio)
       bgAudio.play();
-    }, 4000)
+    }, 10000)
   }, [])
   
   return (
