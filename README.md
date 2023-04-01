@@ -9,13 +9,13 @@ Build to taste our habilities in React aiming responsiveness with consumption Gi
 
 ## Features
 
-=> Components of React;
-=> Components of ReactDOM;
-=> Components of ReactIcons;
-=> Modules of CSS;
-=> TypeScript;
-=> Custom own hooks;
-=> Conventional Commmits.
+=> Components of React; <br>
+=> Components of ReactDOM; <br>
+=> Components of ReactIcons; <br>
+=> Modules of CSS; <br>
+=> TypeScript; <br>
+=> Custom own hooks; <br>
+=> Conventional Commmits. <br>
 
 ### Live Version 
 
